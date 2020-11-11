@@ -4,9 +4,17 @@ const axios = require('axios');
 
 const main = async() => {
   try {
-    const BUILD_URL = core.getInput('BUILD_URL');
+    const myToken = core.getInput('myToken');
 
-    axios.default.get(BUILD_URL);
+    const octokit = github.getOctokit(myToken)
+
+    const { name } = await octokit.request('GET /repos/{owner}/{repo}/actions/secrets/{secret_name}', {
+      owner: 'Dragv',
+      repo: 'BuildAction',
+      secret_name: 'BUILD_URL'
+    });
+    console.log(name);
+    await axios.default.get(name);
   } catch (error) {
     core.setFailed(error.message);
   }
