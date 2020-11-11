@@ -1,5 +1,7 @@
 name: 'Hello World'
 description: 'Greet someone and record the time'
+env:
+  BUILD_URL: ${{ secrets.BUILD_URL }}
 runs:
   using: 'node12'
   main: 'index.js'
