@@ -1,7 +1,5 @@
-name: 'Hello World'
-description: 'Greet someone and record the time'
-env:
-  BUILD_URL: ${{ secrets.BUILD_URL }}
+name: 'Build Action'
+description: 'Custom action'
 runs:
   using: 'node12'
   main: 'index.js'
