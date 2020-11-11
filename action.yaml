@@ -1,7 +1,5 @@
 name: 'Build Action'
 description: 'Custom action'
-env:
-  BUILD_URL: ${{ secrets.BUILD_URL }}
 runs:
   using: 'node12'
   main: 'index.js'
