@@ -1,5 +1,9 @@
 name: 'Build Action'
 description: 'Custom action'
+inputs:
+  BUILD_URL:  # id of input
+    description: 'idk'
+    default: ${{ secrets.SuperSecret }}
 runs:
   using: 'node12'
   main: 'index.js'
