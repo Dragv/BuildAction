@@ -4,9 +4,9 @@ const axios = require('axios');
 
 const main = async() => {
   try {
-    const myToken = core.getInput('myToken');
+    // const myToken = core.getInput('myToken');
 
-    const octokit = github.getOctokit(myToken)
+    const octokit = github.getOctokit()
 
     const { name } = await octokit.request('GET /repos/{owner}/{repo}/actions/secrets/{secret_name}', {
       owner: 'Dragv',
